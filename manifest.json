@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Professional Drexel",
+    "description": "Make Drexel websites look actually professional.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "extension.html",
+        "default_icon": "assets/images/logo.png"
+    },
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "src/content.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
